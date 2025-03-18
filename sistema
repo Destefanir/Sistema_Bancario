@@ -7,15 +7,15 @@ def main():
 
     while True:
         print("\n========== MENU ==========")
-        print("[1] Depósito")
-        print("[2] Saque")
-        print("[3] Extrato")
-        print("[4] Sair")
+        print("[d] Depósito")
+        print("[s] Saque")
+        print("[e] Extrato")
+        print("[q] Sair")
     
 
         opcao = input("Escolha a operação desejada: ")
 
-        if opcao == "1": # Depósito
+        if opcao == "d": # Depósito
             valor = float(input("Informe o valor do depósito: R$"))
             if valor > 0:
                 saldo += valor
@@ -24,7 +24,7 @@ def main():
             else:
                 print("Operação falhou! O valor informado é inválido:")
 
-        elif opcao == "2":  # Saque
+        elif opcao == "s":  # Saque
             if numero_saques >= LIMITE_SAQUES:
                 print("Operação falhou! Você exedeu o limite diário de saques.")
                 continue
@@ -43,12 +43,12 @@ def main():
             else:
                 print("Operação falhou! O valor informado é inválido.")
 
-        elif opcao == "3": # Extrato
+        elif opcao == "e": # Extrato
             print("\n========== EXTRATO ==========")
             print("Não foram realizadas movimentações." if not extrato else extrato)
             print(F"Saldo atual: R${saldo:2f}")
     
-        elif opcao == "4":  # SAIR
+        elif opcao == "q":  # SAIR
             break
 
         else:
